@@ -1,0 +1,67 @@
+import React, { useState } from "react";
+import logo from "../../assets/images/logo.png";
+import heroImage from "../../assets/images/banner-main.png";
+import { AiFillDollarCircle } from "react-icons/ai";
+const Header = () => {
+  // for coins claiming
+  const [Coins, setCoins] = useState(0);
+  const handleClaimCoins = () => {
+    setCoins(Coins + 6000000);
+  };
+  // for coins claiming
+
+  //   for player cart
+
+  return (
+    <div className="header-container">
+      <div className="flex justify-between items-center mb-10">
+        <img src={logo} alt="" />
+        <ul className="md:flex justify-between gap-8 items-center text-base text-[#131313]">
+          <li>
+            <a href="">Home</a>
+          </li>
+          <li>
+            <a href="">Fixture</a>
+          </li>
+          <li>
+            <a href="">Teams</a>
+          </li>
+          <li>
+            <a href="">Schedules</a>
+          </li>
+          <li className="border px-5 py-2 ">
+            <a className="flex items-center mt-1 gap-1 text-bold" href="">
+              {Coins} Coin
+              <AiFillDollarCircle></AiFillDollarCircle>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <div
+        className="
+     flex flex-col gap-6 rounded-3xl bg-black min-h-screen items-center justify-center"
+      >
+        <img
+          className="w-[100%] max-w-60  items-center justify-center"
+          src={heroImage}
+          alt=""
+        />
+        <h1 className="text-white text-4xl font-bold">
+          Assemble Your Ultimate Dream 11 Cricket Team
+        </h1>
+        <p className="text-white text-xl">Beyond Boundaries Beyond Limits</p>
+        <div className="p-1 border rounded-xl ">
+          <button
+            onClick={handleClaimCoins}
+            className="bg-[#E7FE29] hover:bg-[#E9EE89] rounded-xl py-3 px-4 text-base	font-bold"
+          >
+            Claim Free Credit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Header;
