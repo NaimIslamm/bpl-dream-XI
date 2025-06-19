@@ -1,17 +1,7 @@
-import React, { useState } from "react";
 import logo from "../../assets/images/logo.png";
 import heroImage from "../../assets/images/banner-main.png";
 import { AiFillDollarCircle } from "react-icons/ai";
-const Header = () => {
-  // for coins claiming
-  const [Coins, setCoins] = useState(0);
-  const handleClaimCoins = () => {
-    setCoins(Coins + 6000000);
-  };
-  // for coins claiming
-
-  //   for player cart
-
+const Header = ({ Coins, handleClaimCoins }) => {
   return (
     <div className="header-container">
       <div className="flex justify-between items-center mb-10">
@@ -39,8 +29,8 @@ const Header = () => {
       </div>
 
       <div
-        className="
-     flex flex-col gap-6 rounded-3xl bg-black min-h-screen items-center justify-center"
+        className="hero-banner
+     flex flex-col gap-6 rounded-3xl bg-black min-h-[545px] items-center justify-center"
       >
         <img
           className="w-[100%] max-w-60  items-center justify-center"

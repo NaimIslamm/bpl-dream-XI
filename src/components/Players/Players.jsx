@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
 import PlayerCart from "../PlayerCart/PlayerCart";
-const Players = () => {
+import React, { useEffect, useState } from "react";
+const Players = ({ handleplayerselect, PlayerSelect }) => {
+  // // for API fetch
   const [Players, setPlayers] = useState([]);
 
   useEffect(() => {
@@ -8,14 +9,8 @@ const Players = () => {
       .then((res) => res.json())
       .then((data) => setPlayers(data));
   }, []);
+  // // for API fetch
 
-  // choose player
-  const [PlayerSelect, setPlayerSelect] = useState([]);
-
-  const handleplayerselect = ({ player }) => {
-    const newplayerselect = [...PlayerSelect, player];
-    setPlayerSelect(newplayerselect);
-  };
   return (
     <div className="player-container-wrapper">
       <div className="flex justify-between items-center mt-20 mb-8">
@@ -24,12 +19,12 @@ const Players = () => {
           <button className="bg-[#E7FE29] rounded-l-xl py-2 px-5 text-base	font-bold">
             Available
           </button>
-          <button className="py-2 px-5 text-base border font-bold rounded-r-xl">
+          <button className="py-2 px-5 text-base border rounded-r-xl">
             Selected({PlayerSelect.length})
           </button>
         </div>
       </div>
-      <h2>Total Players:{Players.length}</h2>
+
       <div className="players-cart grid md:grid-cols-3 gap-5">
         {Players.map((player, index) => (
           <PlayerCart

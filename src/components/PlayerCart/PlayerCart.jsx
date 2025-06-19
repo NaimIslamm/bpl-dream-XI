@@ -1,16 +1,8 @@
 import { IoPerson } from "react-icons/io5";
 
 const PlayerCart = ({ player, handleplayerselect }) => {
-  const {
-    playerId,
-    name,
-    country,
-    image,
-    role,
-    battingType,
-    bowlingType,
-    biddingPrice,
-  } = player;
+  const { name, country, image, role, battingType, bowlingType, biddingPrice } =
+    player;
   return (
     <div className="player-cart-main ">
       <div className="p-5 border rounded-xl flex flex-col gap-4">
