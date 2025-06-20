@@ -1,4 +1,5 @@
 import { IoPerson } from "react-icons/io5";
+import { ToastContainer } from "react-toastify";
 
 const PlayerCart = ({ player, handleplayerselect }) => {
   const { name, country, image, role, battingType, bowlingType, biddingPrice } =
@@ -30,7 +31,8 @@ const PlayerCart = ({ player, handleplayerselect }) => {
             className="border py-1 px-4 rounded-lg hover:bg-[#E9EE89]"
           >
             Choose Player
-          </button>
+          </button>{" "}
+          <ToastContainer />
         </div>
       </div>
     </div>

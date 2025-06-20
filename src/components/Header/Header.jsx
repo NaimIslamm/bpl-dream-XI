@@ -20,7 +20,7 @@ const Header = ({ Coins, handleClaimCoins }) => {
             <a href="">Schedules</a>
           </li>
           <li className="border px-5 py-2 ">
-            <a className="flex items-center mt-1 gap-1 text-bold" href="">
+            <a className="flex items-center mt-1 gap-1 font-semibold" href="">
               {Coins} Coin
               <AiFillDollarCircle></AiFillDollarCircle>
             </a>

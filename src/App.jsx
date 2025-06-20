@@ -3,11 +3,12 @@ import Header from "./components/header/header";
 import Players from "./components/Players/Players";
 import Cartlist from "./components/Cartlist/Cartlist";
 import { useState } from "react";
+import { toast } from "react-toastify";
 function App() {
   // for coins claiming
   const [Coins, setCoins] = useState(0);
   const handleClaimCoins = () => {
-    setCoins(Coins + 6000000);
+    alert(setCoins(Coins + 6000000), "Credit added");
   };
   // console.log(Coins);
   // for coins claiming
@@ -25,12 +26,13 @@ function App() {
   const [PlayerSelect, setPlayerSelect] = useState([]);
 
   const handleplayerselect = (player) => {
-    console.log(player, "hi player");
+    // console.log(player, "hi player");
     const isExist = PlayerSelect.find(
       (item) => item.playerId == player.playerId
     );
     const newplayerselect = [...PlayerSelect, player];
     if (!isExist) {
+      // 2 ta condition mille player add hbe:
       // this condition for added coins from claim credit otherwise will not choose player
       if (player.biddingPrice < Coins) {
         const remainingBalance = Coins - player.biddingPrice;
@@ -40,13 +42,13 @@ function App() {
         if (newplayerselect.length <= 6) {
           setPlayerSelect(newplayerselect);
         } else {
-          alert("Not more than 6");
+          toast("Not more than 6");
         }
       } else {
-        alert("Not Enough Money");
+        toast("Not Enough Money");
       }
     } else {
-      alert("already added");
+      toast("already added");
     }
   };
 
