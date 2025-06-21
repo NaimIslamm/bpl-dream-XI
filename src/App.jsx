@@ -3,7 +3,7 @@ import Header from "./components/header/header";
 import Players from "./components/Players/Players";
 import Cartlist from "./components/Cartlist/Cartlist";
 import { useState } from "react";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 function App() {
@@ -14,6 +14,10 @@ function App() {
     toast.success("Succesfully Claimed", {
       position: "top-left",
       autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
     });
   };
   // console.log(Coins);
@@ -50,15 +54,40 @@ function App() {
           toast.success("Player Added Succesfully", {
             position: "top-left",
             autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
           });
         } else {
-          toast.info("Not more than 6");
+          toast.info("Not more than 6", {
+            position: "top-left",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+          });
         }
       } else {
-        toast.warn("Not Enough Money", { position: "top-left" });
+        toast.warn("Not Enough Money", { 
+          position: "top-left",
+          autoClose: 3000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       }
     } else {
-      toast.info("already added");
+      toast.info("already added", {
+        position: "top-left",
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+      });
     }
   };
 
@@ -89,12 +118,14 @@ function App() {
         <Players
           handleplayerselect={handleplayerselect}
           PlayerSelect={PlayerSelect}
+          handledeleteplayer={handledeleteplayer}
         ></Players>
         <Cartlist
           PlayerSelect={PlayerSelect}
           handledeleteplayer={handledeleteplayer}
         ></Cartlist>
       </div>
+      <ToastContainer />
     </>
   );
 }
