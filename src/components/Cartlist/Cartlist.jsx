@@ -20,10 +20,10 @@ const Cartlist = ({ PlayerSelect, handledeleteplayer }) => {
         </div>
       </div>
       {PlayerSelect.map((item, index) => (
-        <div className="flex justify-between gap-4 border px-3 py-4 rounded-xl mb-4">
-          <div className="flex justify-between items-center gap-6">
+        <div className="md:flex justify-between gap-6 border px-3 py-4 rounded-xl mb-4">
+          <div className="md:flex justify-between items-center gap-6">
             <img
-              className="md:max-w-[100px] w-[100%] rounded-xl"
+              className="sm:max-w-[200px] md:max-w-[100px] w-[100%] rounded-xl"
               key={index}
               src={item.image}
               alt=""

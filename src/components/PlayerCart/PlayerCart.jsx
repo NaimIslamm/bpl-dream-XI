@@ -30,9 +30,8 @@ const PlayerCart = ({ player, handleplayerselect }) => {
             onClick={() => handleplayerselect(player)}
             className="border py-1 px-4 rounded-lg hover:bg-[#E9EE89]"
           >
-            Choose Player
+            Choose Player <ToastContainer />
           </button>
-          <ToastContainer />
         </div>
       </div>
     </div>
