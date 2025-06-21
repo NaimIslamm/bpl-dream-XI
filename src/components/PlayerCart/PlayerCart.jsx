@@ -31,7 +31,7 @@ const PlayerCart = ({ player, handleplayerselect }) => {
             className="border py-1 px-4 rounded-lg hover:bg-[#E9EE89]"
           >
             Choose Player
-          </button>{" "}
+          </button>
           <ToastContainer />
         </div>
       </div>

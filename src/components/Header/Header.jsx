@@ -1,6 +1,9 @@
 import logo from "../../assets/images/logo.png";
 import heroImage from "../../assets/images/banner-main.png";
 import { AiFillDollarCircle } from "react-icons/ai";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 const Header = ({ Coins, handleClaimCoins }) => {
   return (
     <div className="header-container">
@@ -48,6 +51,7 @@ const Header = ({ Coins, handleClaimCoins }) => {
           >
             Claim Free Credit
           </button>
+          <ToastContainer />
         </div>
       </div>
     </div>

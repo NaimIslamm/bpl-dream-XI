@@ -4,11 +4,17 @@ import Players from "./components/Players/Players";
 import Cartlist from "./components/Cartlist/Cartlist";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 function App() {
   // for coins claiming
   const [Coins, setCoins] = useState(0);
   const handleClaimCoins = () => {
-    alert(setCoins(Coins + 6000000), "Credit added");
+    setCoins(Coins + 6000000);
+    toast.success("Succesfully Claimed", {
+      position: "top-left",
+      autoClose: 3000,
+    });
   };
   // console.log(Coins);
   // for coins claiming
@@ -41,14 +47,18 @@ function App() {
         // this condition for not added not more than 6 player
         if (newplayerselect.length <= 6) {
           setPlayerSelect(newplayerselect);
+          toast.success("Player Added Succesfully", {
+            position: "top-left",
+            autoClose: 3000,
+          });
         } else {
-          toast("Not more than 6");
+          toast.info("Not more than 6");
         }
       } else {
-        toast("Not Enough Money");
+        toast.warn("Not Enough Money", { position: "top-left" });
       }
     } else {
-      toast("already added");
+      toast.info("already added");
     }
   };
 
