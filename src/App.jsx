@@ -34,7 +34,7 @@ function App() {
 
   // choose player
   const [PlayerSelect, setPlayerSelect] = useState([]);
-
+  console.log(PlayerSelect, "hello");
   const handleplayerselect = (player) => {
     // console.log(player, "hi player");
     const isExist = PlayerSelect.find(
@@ -70,7 +70,7 @@ function App() {
           });
         }
       } else {
-        toast.warn("Not Enough Money", { 
+        toast.warn("Not Enough Money", {
           position: "top-left",
           autoClose: 3000,
           hideProgressBar: false,
@@ -107,6 +107,11 @@ function App() {
     const remainingPlayers = PlayerSelect.filter(
       (item) => item.playerId !== playerToDelete.playerId
     );
+    if (remainingPlayers) {
+      // jei player ta delete korci sai player ta ei function a playerToDelete props hoye asce sei props er (playerToDelete.biddingPrice) diye abr kete newa coins ta add kore dicci
+      const remainingBalance = Coins + playerToDelete.biddingPrice;
+      setCoins(remainingBalance);
+    }
     setPlayerSelect(remainingPlayers);
   };
   // delete player
@@ -120,10 +125,10 @@ function App() {
           PlayerSelect={PlayerSelect}
           handledeleteplayer={handledeleteplayer}
         ></Players>
-        <Cartlist
+        {/* <Cartlist
           PlayerSelect={PlayerSelect}
           handledeleteplayer={handledeleteplayer}
-        ></Cartlist>
+        ></Cartlist> */}
       </div>
       <ToastContainer />
     </>
