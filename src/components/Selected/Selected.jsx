@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
+import Players from "../Players/Players";
 
 const Selected = ({ PlayerSelect, handledeleteplayer }) => {
+  const [showAvailable, setShowavailable] = useState(true);
+
   return (
     <div>
       {PlayerSelect.map((item, index) => (
@@ -30,6 +33,12 @@ const Selected = ({ PlayerSelect, handledeleteplayer }) => {
           )}
         </div>
       ))}
+      <button
+        onClick={() => setShowavailable(true)}
+        className="py-2 px-5 text-base border rounded-xl font-bold bg-[#E7FE29]"
+      >
+        Add more player
+      </button>
     </div>
   );
 };

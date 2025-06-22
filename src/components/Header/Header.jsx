@@ -33,7 +33,7 @@ const Header = ({ Coins, handleClaimCoins }) => {
 
       <div
         className="hero-banner
-     flex flex-col gap-6 rounded-3xl bg-black min-h-[545px] items-center justify-center"
+     flex flex-col gap-6 rounded-3xl bg-black min-h-[545px] items-center justify-center px-5 text-center"
       >
         <img
           className="w-[100%] max-w-60  items-center justify-center"

@@ -15,13 +15,13 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
 
   return (
     <div className="player-container-wrapper">
-      <div className="flex justify-between items-center mt-20 mb-8">
+      <div className="md:flex justify-between items-center mt-20 mb-8 ">
         <h2 className="text-3xl text-black font-bold">
           {showSelected
             ? `Selected Player (${PlayerSelect.length}/6)`
             : "Available Players"}
         </h2>
-        <div className="flex">
+        <div className="flex sm:mt-5">
           <button
             className={`bg-[#E7FE29] rounded-l-xl py-2 px-5 text-base font-bold ${
               !showSelected ? "border" : "bg-transparent"
@@ -40,7 +40,7 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
           </button>
         </div>
       </div>
-      {/* ekhane ternary operator diye "true" hole  <Selected/> components ta show korano holo ekbar "false" means available button ta > <PlayerCart/> components ta show korano holo */}
+      {/* ekhane ternary operator diye "true" hole  <Selected/> components ta show korano holo ekbar "false" means available button ta >>> <PlayerCart/> components ta show korano holo */}
       {showSelected ? (
         <Selected
           PlayerSelect={PlayerSelect}

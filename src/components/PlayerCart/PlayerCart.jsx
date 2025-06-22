@@ -5,9 +5,13 @@ const PlayerCart = ({ player, handleplayerselect }) => {
   const { name, country, image, role, battingType, bowlingType, biddingPrice } =
     player;
   return (
-    <div className="player-cart-main ">
+    <div className="player-cart-main shadow-lg rounded-xl">
       <div className="p-5 border rounded-xl flex flex-col gap-4">
-        <img className=" max-w-[376px] rounded-xl " src={image} alt="" />
+        <img
+          className=" md:max-w-[376px] w-[100%] rounded-xl "
+          src={image}
+          alt=""
+        />
         <div>
           <h3 className="flex gap-2 items-center font-bold">
             <IoPerson />
