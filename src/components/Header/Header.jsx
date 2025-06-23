@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Header = ({ Coins, handleClaimCoins }) => {
   return (
     <div className="header-container">
-      <div className="flex justify-between items-center mb-10">
+      <div className="flex justify-between items-center mb-10 mx-auto sticky top-0 bg-white bg-opacity-300 backdrop-blur-md lg:p-[3.5rem] h-[3.5rem] mt-5 ">
         <img src={logo} alt="" />
         <ul className="md:flex justify-between gap-8 items-center text-base text-[#131313]">
           <li>

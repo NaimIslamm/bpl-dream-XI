@@ -6,6 +6,8 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
   const [Players, setPlayers] = useState([]);
   const [showSelected, setShowSelected] = useState(false);
 
+  const onBackToSelection = () => setShowSelected(false, "hi");
+
   useEffect(() => {
     fetch("players.json")
       .then((res) => res.json())
@@ -21,7 +23,7 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
             ? `Selected Player (${PlayerSelect.length}/6)`
             : "Available Players"}
         </h2>
-        <div className="flex sm:mt-5">
+        <div className="flex sm:mt-5 sticky top-1 bg-white bg-opacity-300 backdrop-blur-md">
           <button
             className={`bg-[#E7FE29] rounded-l-xl py-2 px-5 text-base font-bold ${
               !showSelected ? "border" : "bg-transparent"
@@ -40,11 +42,13 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
           </button>
         </div>
       </div>
-      {/* ekhane ternary operator diye "true" hole  <Selected/> components ta show korano holo ekbar "false" means available button ta >>> <PlayerCart/> components ta show korano holo */}
+      {/* ekhane ternary operator diye "true" hole  <Selected/> components ta show korano holo ekbar & "false" means available button ta >>> <PlayerCart/> components ta show korano holo */}
       {showSelected ? (
         <Selected
+          Players={Players}
           PlayerSelect={PlayerSelect}
           handledeleteplayer={handledeleteplayer}
+          onBackToSelection={() => setShowSelected(false)}
         />
       ) : (
         <div className="players-cart grid md:grid-cols-3 gap-5">

@@ -81,7 +81,7 @@ function App() {
       }
     } else {
       toast.info("already added", {
-        position: "top-left",
+        position: "top-center",
         autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
@@ -111,6 +111,7 @@ function App() {
       // jei player ta delete korci sai player ta ei function a playerToDelete props hoye asce sei props er (playerToDelete.biddingPrice) diye abr kete newa coins ta add kore dicci
       const remainingBalance = Coins + playerToDelete.biddingPrice;
       setCoins(remainingBalance);
+      toast.info("Delete Player & Credit Updated");
     }
     setPlayerSelect(remainingPlayers);
   };
@@ -118,7 +119,7 @@ function App() {
 
   return (
     <>
-      <div className="p-5 max-w-7xl mx-auto">
+      <div className="p-5 max-w-7xl mx-auto ">
         <Header Coins={Coins} handleClaimCoins={handleClaimCoins}></Header>
         <Players
           handleplayerselect={handleplayerselect}

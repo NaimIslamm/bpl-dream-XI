@@ -2,7 +2,13 @@ import React, { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Players from "../Players/Players";
 
-const Selected = ({ PlayerSelect, handledeleteplayer }) => {
+const Selected = ({
+  PlayerSelect,
+  handledeleteplayer,
+  Players,
+  onBackToSelection,
+}) => {
+  console.log(onBackToSelection, "selected");
   const [showAvailable, setShowavailable] = useState(true);
 
   return (
@@ -34,7 +40,7 @@ const Selected = ({ PlayerSelect, handledeleteplayer }) => {
         </div>
       ))}
       <button
-        onClick={() => setShowavailable(true)}
+        onClick={onBackToSelection}
         className="py-2 px-5 text-base border rounded-xl font-bold bg-[#E7FE29]"
       >
         Add more player
