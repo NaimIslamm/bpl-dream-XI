@@ -1,15 +1,34 @@
 import logo from "../../assets/images/logo.png";
 import heroImage from "../../assets/images/banner-main.png";
 import { AiFillDollarCircle } from "react-icons/ai";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { IoMdClose } from "react-icons/io";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useState } from "react";
 
 const Header = ({ Coins, handleClaimCoins }) => {
+  const [Menu, setmenu] = useState(false);
+  const handleMenuButton = () => {
+    console.log(!Menu, "nav");
+    setmenu(!Menu, "nav");
+  };
   return (
-    <div className="header-container">
-      <div className="flex justify-between items-center mb-10 mx-auto sticky top-0 bg-white bg-opacity-300 backdrop-blur-md lg:p-[3.5rem] h-[3.5rem] mt-5 ">
+    <div className="header-container ">
+      <div className="flex justify-between items-center mb-10 mx-auto md:sticky top-0 bg-white bg-opacity-300 backdrop-blur-md lg:p-[1rem] px-5">
         <img src={logo} alt="" />
-        <ul className="md:flex justify-between gap-8 items-center text-base text-[#131313]">
+        <span
+          onClick={handleMenuButton}
+          className="md:hidden text-[30px] border border-yellow-500 hover:border-[#EC5726] p-2"
+        >
+          {Menu ? <IoMdClose /> : <GiHamburgerMenu />}
+        </span>
+
+        <ul
+          className={`md:flex sm:flex justify-between gap-8 items-center text-base text-[#131313] ${
+            Menu ? "open" : ""
+          }`}
+        >
           <li>
             <a href="">Home</a>
           </li>
@@ -22,13 +41,20 @@ const Header = ({ Coins, handleClaimCoins }) => {
           <li>
             <a href="">Schedules</a>
           </li>
-          <li className="border px-5 py-2 ">
+          <li className="border px-5 py-2 md:block lg:block sm:hidden ">
             <a className="flex items-center mt-1 gap-1 font-semibold " href="">
               {Coins} Coin
               <AiFillDollarCircle></AiFillDollarCircle>
             </a>
           </li>
         </ul>
+        <a
+          className="md:hidden lg:hidden sm:block border px-5 py-2 flex items-center mt-1 gap-1 font-semibold "
+          href=""
+        >
+          {Coins} Coin
+          <AiFillDollarCircle></AiFillDollarCircle>
+        </a>
       </div>
 
       <div
