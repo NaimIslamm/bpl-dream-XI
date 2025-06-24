@@ -1,7 +1,6 @@
 import "./App.css";
 import Header from "./components/header/header";
 import Players from "./components/Players/Players";
-import Cartlist from "./components/Cartlist/Cartlist";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";

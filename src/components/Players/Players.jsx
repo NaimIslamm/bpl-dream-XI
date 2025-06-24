@@ -6,8 +6,7 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
   const [Players, setPlayers] = useState([]);
   const [showSelected, setShowSelected] = useState(false);
 
-  const onBackToSelection = () => setShowSelected(false, "hi");
-
+  // // for API fetch
   useEffect(() => {
     fetch("players.json")
       .then((res) => res.json())
@@ -26,7 +25,7 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
         <div className="flex sm:mt-5 sticky top-1 bg-white bg-opacity-300 backdrop-blur-md">
           <button
             className={`bg-[#E7FE29] rounded-l-xl py-2 px-5 text-base font-bold ${
-              !showSelected ? "border" : "bg-transparent"
+              !showSelected ? "border" : "bg-transparent border"
             }`}
             onClick={() => setShowSelected(false)}
           >

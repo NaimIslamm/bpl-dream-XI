@@ -1,15 +1,9 @@
-import React, { useState } from "react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import Players from "../Players/Players";
 
-const Selected = ({
-  PlayerSelect,
-  handledeleteplayer,
-  Players,
-  onBackToSelection,
-}) => {
+const Selected = ({ PlayerSelect, handledeleteplayer, onBackToSelection }) => {
+  // ei onBackToSelection diye false hoye abr back a chole jacce mane cart gula show korce
   console.log(onBackToSelection, "selected");
-  const [showAvailable, setShowavailable] = useState(true);
 
   return (
     <div>
