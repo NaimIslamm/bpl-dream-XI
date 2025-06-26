@@ -18,17 +18,17 @@ const PlayerCart = ({ player, handleplayerselect }) => {
             {name}
           </h3>
         </div>
-        <div className="flex justify-between items-center ">
+        <div className="flex gap-1 justify-between items-center">
           <h4>{country}</h4>
           <h4>{role}</h4>
         </div>
         <hr />
         <h3 className="font-bold ">Rating</h3>
-        <div className="flex justify-between items-center">
+        <div className="flex gap-1 justify-between items-center ">
           <h4 className="font-bold">{battingType}</h4>
           <h4>{bowlingType}</h4>
         </div>
-        <div className="flex justify-between items-center">
+        <div className="flex justify-between items-center gap-1">
           <h4 className="font-bold">Price: ${biddingPrice}</h4>
           <button
             onClick={() => handleplayerselect(player)}

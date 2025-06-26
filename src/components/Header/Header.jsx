@@ -56,29 +56,30 @@ const Header = ({ Coins, handleClaimCoins }) => {
           <AiFillDollarCircle></AiFillDollarCircle>
         </a>
       </div>
-
-      <div
-        className="hero-banner
+      <div className="hero-container-wrapper px-5">
+        <div
+          className="hero-banner
      flex flex-col gap-6 rounded-3xl bg-black min-h-[545px] items-center justify-center px-5 text-center"
-      >
-        <img
-          className="w-[100%] max-w-60  items-center justify-center"
-          src={heroImage}
-          alt=""
-        />
-        <h1 className="text-white text-4xl font-bold">
-          Assemble Your Ultimate Dream 11 Cricket Team
-        </h1>
-        <p className="text-white text-xl">Beyond Boundaries Beyond Limits</p>
-        <div className="p-1 border rounded-xl ">
-          <button
-            onClick={handleClaimCoins}
-            className="bg-[#E7FE29] hover:bg-[#E9EE89] rounded-xl py-3 px-4 text-base	font-bold"
-          >
-            Claim Free Credit
-          </button>
-        </div>{" "}
-        <ToastContainer />
+        >
+          <img
+            className="w-[100%] max-w-60  items-center justify-center"
+            src={heroImage}
+            alt=""
+          />
+          <h1 className="text-white text-4xl font-bold">
+            Assemble Your Ultimate Dream 11 Cricket Team
+          </h1>
+          <p className="text-white text-xl">Beyond Boundaries Beyond Limits</p>
+          <div className="p-1 border rounded-xl ">
+            <button
+              onClick={handleClaimCoins}
+              className="bg-[#E7FE29] hover:bg-[#E9EE89] rounded-xl py-3 px-4 text-base	font-bold"
+            >
+              Claim Free Credit
+            </button>
+          </div>{" "}
+          <ToastContainer />
+        </div>
       </div>
     </div>
   );

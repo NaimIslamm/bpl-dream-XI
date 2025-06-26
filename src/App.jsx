@@ -118,7 +118,7 @@ function App() {
 
   return (
     <>
-      <div className=" max-w-7xl mx-auto ">
+      <div className="max-w-7xl mx-auto ">
         <Header Coins={Coins} handleClaimCoins={handleClaimCoins}></Header>
         <Players
           handleplayerselect={handleplayerselect}

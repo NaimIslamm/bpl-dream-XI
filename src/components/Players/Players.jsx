@@ -15,8 +15,8 @@ const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
   // // for API fetch
 
   return (
-    <div className="player-container-wrapper">
-      <div className="md:flex justify-between items-center mt-20 mb-8 ">
+    <div className="player-container-wrapper px-5 pb-14">
+      <div className="md:flex  justify-between items-center mt-20 mb-8 ">
         <h2 className="text-3xl text-black font-bold">
           {showSelected
             ? `Selected Player (${PlayerSelect.length}/6)`
