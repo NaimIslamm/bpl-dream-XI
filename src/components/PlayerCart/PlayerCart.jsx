@@ -32,7 +32,7 @@ const PlayerCart = ({ player, handleplayerselect }) => {
           <h4 className="font-bold">Price: ${biddingPrice}</h4>
           <button
             onClick={() => handleplayerselect(player)}
-            className="border py-1 px-4 rounded-lg hover:bg-[#E9EE89]"
+            className="border py-1 px-4 rounded-lg hover:bg-[#E9EE89] shadow-lg"
           >
             Choose Player <ToastContainer />
           </button>
