@@ -14,7 +14,7 @@ const Header = ({ Coins, handleClaimCoins }) => {
     setmenu(!Menu, "nav");
   };
   return (
-    <div className="header-container ">
+    <div className="header-container relative">
       <div className="flex justify-between items-center mb-10 mx-auto md:sticky top-0 bg-white bg-opacity-300 backdrop-blur-md lg:p-[1rem] px-5">
         <img src={logo} alt="" />
         <span
@@ -25,8 +25,8 @@ const Header = ({ Coins, handleClaimCoins }) => {
         </span>
 
         <ul
-          className={`md:flex sm:flex justify-between gap-8 items-center text-base text-[#131313] ${
-            Menu ? "open" : ""
+          className={`w-[100%] md:w-auto md:flex md:mr-9 md:static md:bg-transparent absolute  duration-1000 items-center text-base text-[#131313] bg-[#e7fe29]  left-0  ${
+            Menu ? "  top-20" : "-top-80"
           }`}
         >
           <li>

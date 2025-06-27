@@ -16,34 +16,44 @@ body {
   object-position: center;
   background-repeat: no-repeat;
 }
+ul li {
+  margin-right: 30px;
+}
 
 @media only screen and (max-width: 600px) {
   .header-container {
     position: relative;
     padding: 20px 0;
   }
-  .open {
+  /* .open {
     display: flex;
-    transition: 0.5s ease;
+    transition: all 0.5s ease;
   }
   ul {
     display: none;
     flex-direction: column;
     background-color: #e7fe29;
     position: absolute;
-    top: 100px;
+
+    left: 0;
     z-index: 111;
     width: 100%;
     padding: 20px 20px 40px 0;
     transition: all 0.5s ease;
-  }
+  } */
   ul li {
+    margin-bottom: 20px;
     justify-content: flex-start;
     align-items: flex-start;
     font-weight: 700;
     transition: all 0.5s ease;
+    padding: 10px;
   }
+
   ul li:hover {
-    background-color: #e9ee89;
+    background-color: gray;
+  }
+  ul li:last-child {
+    display: none;
   }
 }
