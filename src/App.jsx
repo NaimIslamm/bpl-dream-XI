@@ -1,5 +1,5 @@
 import "./App.css";
-import Header from "./components/header/header";
+import Header from "./components/Header/Header";
 import Players from "./components/Players/Players";
 import { useState } from "react";
 import { toast, ToastContainer } from "react-toastify";
