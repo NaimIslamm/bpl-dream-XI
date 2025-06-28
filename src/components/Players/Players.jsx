@@ -1,21 +1,39 @@
 import PlayerCart from "../PlayerCart/PlayerCart";
 import React, { useEffect, useState } from "react";
 import Selected from "../Selected/Selected";
+import { Audio } from "react-loader-spinner";
 const Players = ({ handleplayerselect, PlayerSelect, handledeleteplayer }) => {
   // // for API fetch
   const [Players, setPlayers] = useState([]);
-  const [showSelected, setShowSelected] = useState(false);
+  const [showSelected, setShowSelected] = useState(true);
 
   // // for API fetch
+
+  // for loading
+  const [loading, setloading] = useState(true);
   useEffect(() => {
     fetch("players.json")
       .then((res) => res.json())
       .then((data) => setPlayers(data));
+    // data jokhon state a chole ashbe mane  ui te show korbe tokhn loading ta k false kore off kore dibo
+    setloading(false);
   }, []);
   // // for API fetch
 
   return (
     <div className="player-container-wrapper px-5 pb-14">
+      {loading && (
+        <Audio
+          height="280"
+          width="280"
+          radius="9"
+          color="green"
+          ariaLabel="loading"
+          wrapperStyle
+          wrapperClass
+        />
+      )}
+
       <div className="md:flex  justify-between items-center mt-20 mb-8 ">
         <h2 className="text-3xl text-black font-bold">
           {showSelected
